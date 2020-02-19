@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Jeu{% endblock %}
+
+{% block body %}
+    <div class="my-5 ml-3 btn btn-outline-secondary btn-sm">
+        <a href="{{ path('jeu_index') }}">Revenir à la liste</a>
+    </div>
+    <h1 class="d-flex justify-content-center my-5" >Création d'un nouveau jeu</h1>
+    <div class="container">
+    {{ include('jeu/_form.html.twig') }}
+    </div>
+
+{% endblock %}

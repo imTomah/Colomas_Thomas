@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jeu{% endblock %}
+
+{% block body %}
+    <a href="{{ path('home') }}" class="ml-5 my-3 btn btn-outline-secondary">Revenir à la liste</a>
+    <h1 style="height:100px; width:auto;" class="d-flex justify-content-center my-5">{{ jeu.nom }}</h1>
+
+    <div style="height:100px; width:auto;">
+    <img src=" {{ jeu.Photo }} " alt="photo Jeu d'ambiance">
+    </div>
+
+    <table class="table" style="width:50%; text-align:right; margin-left:50vw">
+        <tbody>
+            
+            <tr>
+                <th>Nom</th>
+                <td>{{ jeu.nom }}</td>
+            </tr>
+            <tr>
+                <th>Présentation</th>
+                <td>{{ jeu.presentation }}</td>
+            </tr>
+            <tr>
+                <th>Nombre de joueurs</th>
+                <td>{{ jeu.nombreJoueurs }} personnes</td>
+            </tr>
+            <tr>
+                <th>Durée</th>
+                <td>{{ jeu.duree }} min</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ jeu.prix }} EUR</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+
+    
+{% endblock %}

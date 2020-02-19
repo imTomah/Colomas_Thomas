@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jeu index{% endblock %}
+
+{% block body %}
+    <h1 class="d-flex justify-content-center my-5">Index des jeux</h1>
+    <a href="{{ path('jeu_new') }}" class="btn btn-outline-warning my-4 ml-5" >Ajouter un jeu</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th style=" width: 200px">Nombre de joueurs</th>
+                <th>Durée</th>
+                <th>Prix</th>
+                <th>Présentation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jeu in jeus %}
+            <tr style="text-align:center;">
+                <td>{{ jeu.id }}</td>
+                <td>{{ jeu.nom }}</td>
+                <td>{{ jeu.nombreJoueurs }}</td>
+                <td>{{ jeu.duree }}</td>
+                <td>{{ jeu.prix }}</td>
+                <td>{{ jeu.presentation }}</td>
+                <td>
+                    <a href="{{ path('jeu_edit', {'id': jeu.id}) }}" class="badge badge-pill badge-success">Modifier</a>
+                    <form method="post" action="{{ path('jeu_delete', {'id': jeu.id}) }}" onclick="return confirm('êtes-vous sur de vouloir supprimer cet article')">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ jeu.id) }}">
+                        <button class="badge badge-pill badge-danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun jeux trouvé, crée en un a partir de la page d'administration</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

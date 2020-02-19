@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue !{% endblock %}
+
+{% block body %}
+ <h1 class="d-flex justify-content-center my-5">JEUX D'AMBIANCE</h1>
+    <div class="row row-cols-5 justify-content-center">
+        {% for jeu in jeus %}
+            <div class="card border-dark mb-3 mr-3" style="max-width: 20rem;">
+            <div class="card-header">{{ jeu.nom }}</div>
+            <div class="card-body">
+                <p>Nombre de joueurs : {{ jeu.nombreJoueurs }} joueurs</p>
+                <p>Durée : {{ jeu.duree }} min</p>
+                <p>Prix : {{ jeu.prix }} EUR</p>
+                    <a  class="btn btn-outline-info" href="{{ path('jeu_show', {'id': jeu.id}) }}">Voir plus</a>
+            </div>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun jeux trouvé, crée en un a partir de la page d'administration</td>
+            </tr>
+        {% endfor %}
+    </div>
+    </div>
+    
+{% endblock %}
+

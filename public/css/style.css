@@ -1,0 +1,44 @@
+.header{
+    height: 500px;
+    background-image: url(../images/parker-burchfield-tvG4WvjgsEY-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jumbotron{
+    opacity: .95;
+    border: 1px solid black;
+}
+.admin{
+    color: rgb(141,141,141);
+}
+.admin:hover{
+    color:#FFF;
+}
+
+.title_clothe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image_transition{
+    width: 100vw;
+    height: 300px;
+    margin: 70px 0;
+    background-image: url(../images/header2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image_transition h2 {
+    color: #FFF;
+}
+
